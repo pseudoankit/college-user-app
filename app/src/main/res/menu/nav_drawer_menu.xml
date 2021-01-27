@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_elearning"
+        android:icon="@drawable/elearning"
+        android:title="@string/e_learning" />
+    <item
+        android:id="@+id/nav_ebook"
+        android:icon="@drawable/ebook"
+        android:title="@string/ebooks" />
+    <item
+        android:id="@+id/nav_theme"
+        android:icon="@drawable/theme"
+        android:title="@string/themes" />
+    <item
+        android:id="@+id/nav_website"
+        android:icon="@drawable/website"
+        android:title="@string/website" />
+    <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/share"
+        android:title="@string/share" />
+    <item
+        android:id="@+id/nav_rateus"
+        android:icon="@drawable/rating"
+        android:title="@string/rate_us" />
+    <item
+        android:id="@+id/nav_developer"
+        android:icon="@drawable/developer"
+        android:title="@string/developers" />
+</menu>
