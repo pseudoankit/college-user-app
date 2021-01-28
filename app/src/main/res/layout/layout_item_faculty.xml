@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="faculty"
+            type="com.android.collegeapp.ui.main.faculty.Faculty" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cv_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/cv_padding"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.7"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/text_regular"
+                    android:text="@{faculty.name}" />
+
+                <TextView
+                    style="@style/text_regular"
+                    android:text="@{faculty.email}" />
+
+                <TextView
+                    style="@style/text_regular"
+                    android:text="@{faculty.post}" />
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivFacultyImage"
+                android:layout_width="@dimen/civ_dimen"
+                android:layout_height="@dimen/civ_dimen"
+                android:layout_marginEnd="-10dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

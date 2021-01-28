@@ -12,14 +12,15 @@ import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    override fun getFragmentView() = R.layout.fragment_home
+
+    override fun setFragmentView() = R.layout.fragment_home
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         imageSlider()
 
-        binding.map.setOnClickListener { openMap() }
+        binding.ivMap.setOnClickListener { openMap() }
     }
 
     private fun openMap() {

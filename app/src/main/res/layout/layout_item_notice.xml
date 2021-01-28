@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/cv_elevation"
+        android:layout_margin="@dimen/cv_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/cv_padding">
+
+            <TextView
+                android:id="@+id/notice_title"
+                android:layout_marginTop="-4dp"
+                style="@style/text_title"
+                tools:text="ankit" />
+
+            <TextView
+                android:id="@+id/notice_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey"
+                android:layout_gravity="end"
+                tools:text="Date: ;;"
+                android:fontFamily="@string/regular"
+                android:layout_marginStart="@dimen/dimen_1"
+                android:layout_marginTop="-3dp"/>
+
+            <ImageView
+                android:id="@+id/iv_notice_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginTop="13dp"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

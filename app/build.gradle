@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    //id 'com.google.gms.google-services' //firebase
+    id 'com.google.gms.google-services' //firebase
     id 'kotlin-kapt'
     id 'org.jetbrains.kotlin.android.extensions'    //parcelable
 }

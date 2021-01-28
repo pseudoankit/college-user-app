@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 
 abstract class BaseFragment<T : ViewDataBinding> : Fragment(){
 
@@ -20,13 +19,13 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment(){
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater,
-            getFragmentView(),
+            setFragmentView(),
             container,
             false
         )
         return binding.root
     }
 
-    abstract fun getFragmentView(): Int
+    abstract fun setFragmentView(): Int
 
 }

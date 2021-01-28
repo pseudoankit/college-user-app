@@ -15,15 +15,14 @@
             <com.smarteist.autoimageslider.SliderLayout
                 android:id="@+id/image_slider"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/image_slider_height" />
+                android:layout_height="@dimen/image_height_250" />
 
             <TextView
-                style="@style/title_text"
-                android:layout_marginTop="30dp"
+                style="@style/text_title"
                 android:text="@string/home_title" />
 
             <TextView
-                style="@style/regular_text_center"
+                style="@style/text_medium_center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/home_description" />
@@ -37,17 +36,16 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/title_text"
-                    android:layout_marginTop="20dp"
+                    style="@style/text_title"
+                    android:layout_marginTop="24dp"
                     android:text="@string/departments"
                     android:textColor="@color/white" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_marginTop="10dp"
-                    android:elevation="5dp">
+                    android:layout_margin="@dimen/cv_margin"
+                    android:elevation="@dimen/cv_elevation">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -55,31 +53,22 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/regular_text_center"
+                            style="@style/text_medium_center"
                             android:text="CS" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/grey" />
+                        <View style="@style/separator_gray" />
 
                         <TextView
-                            style="@style/regular_text_center"
+                            style="@style/text_medium_center"
                             android:text="CS" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/grey" />
+                        <View style="@style/separator_black" />
 
                         <TextView
-                            style="@style/regular_text_center"
+                            style="@style/text_medium_center"
                             android:text="CS" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/grey" />
+                        <View style="@style/separator_black" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
@@ -92,19 +81,20 @@
                 android:padding="@dimen/text_margin">
 
                 <TextView
-                    style="@style/title_text"
+                    style="@style/text_title"
                     android:text="@string/contact_details" />
 
                 <TextView
-                    style="@style/regular_text"
+                    style="@style/text_regular"
                     android:text="Name" />
 
                 <ImageView
-                    android:layout_marginTop="20dp"
+                    android:id="@+id/ivMap"
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:id="@+id/map"
-                    android:src="@drawable/map"/>
+                    android:layout_height="@dimen/image_height_250"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/map" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

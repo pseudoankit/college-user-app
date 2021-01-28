@@ -5,6 +5,7 @@
     <string name="regular" tools:ignore="ReferenceType">@font/merienda_regular</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="something_went_wrong">Something went wrong</string>
     <string name="home">Home</string>
     <string name="notice">Notice</string>
     <string name="faculty">Faculty</string>
@@ -23,4 +24,10 @@
     <string name="home_description">about college des</string>
     <string name="departments">Departments</string>
     <string name="contact_details">Contact Details</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="cse">Computer Science</string>
+    <string name="mechanical">Mechanical</string>
+    <string name="ece">Electronics</string>
+    <string name="convocation">Convocation</string>
+    <string name="republic_day">Republic Day</string>
 </resources>

@@ -14,17 +14,18 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="title_text">
+    <style name="text_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="fontFamily">@string/bold</item>
+        <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textSize">@dimen/text_title</item>
         <item name="android:layout_centerHorizontal">true</item>
     </style>
 
-    <style name="regular_text_center">
+    <style name="text_medium_center">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">5dp</item>
@@ -34,12 +35,24 @@
         <item name="android:textSize">@dimen/text_size</item>
         <item name="android:layout_centerHorizontal">true</item>
     </style>
-    <style name="regular_text">
+
+    <style name="text_regular">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_margin">2dp</item>
         <item name="fontFamily">@string/regular</item>
         <item name="android:textColor">@color/textColor</item>
-        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+    <style name="separator_black">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="separator_gray">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/grey</item>
     </style>
 </resources>

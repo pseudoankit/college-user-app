@@ -1,60 +1,73 @@
 package com.android.collegeapp.ui.main.faculty
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.android.collegeapp.R
+import com.android.collegeapp.databinding.FragmentFacultyBinding
+import com.android.collegeapp.ui.main.BaseFragment
+import com.android.collegeapp.util.hide
+import com.android.collegeapp.util.show
+import com.android.collegeapp.util.toast
+import com.google.firebase.database.*
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class FacultyFragment : BaseFragment<FragmentFacultyBinding>() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FacultyFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class FacultyFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var databaseReference: DatabaseReference
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        databaseReference = FirebaseDatabase.getInstance().reference.child("Faculty")
+
+        rv()
+    }
+
+    private fun rv() {
+        //todo in single rv
+        lifecycleScope.launch {
+            setRv(getString(R.string.cse), binding.rvDepartmentCS, binding.CSNoData)
+            setRv(getString(R.string.ece), binding.rvDepartmentECE, binding.ECENoData)
+            setRv(getString(R.string.mechanical), binding.rvDepartmentME, binding.MENoData)
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_faculty, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FacultyFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FacultyFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private suspend fun setRv(child: String, rv: RecyclerView, noData: View) {
+        var list: MutableList<Faculty>
+        val adapter = FacultyAdapter()
+        val dbPath = databaseReference.child(child)
+        val listener = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                list = mutableListOf()
+                if (!snapshot.exists()) {
+                    noData.show()
+                    rv.hide()
+                } else {
+                    noData.hide()
+                    rv.show()
+                    snapshot.children.forEach { snap ->
+                        list.add(snap.getValue(Faculty::class.java)!!)
+                    }
+                    adapter.addItems(list)
+                    setUpRv(rv, adapter)
                 }
             }
+
+            override fun onCancelled(error: DatabaseError) {
+                context!!.toast(error.toString())
+            }
+        }
+        dbPath.addValueEventListener(listener)
     }
+
+    private fun setUpRv(rv: RecyclerView, adapter: FacultyAdapter) {
+        rv.setHasFixedSize(true)
+        rv.layoutManager = LinearLayoutManager(context)
+        rv.adapter = adapter
+        }
+
+    override fun setFragmentView() = R.layout.fragment_faculty
 }
