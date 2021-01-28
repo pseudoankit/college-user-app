@@ -29,6 +29,4 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment(){
 
     abstract fun getFragmentView(): Int
 
-    abstract fun getVMFactory(): ViewModelProvider.Factory
-
 }
