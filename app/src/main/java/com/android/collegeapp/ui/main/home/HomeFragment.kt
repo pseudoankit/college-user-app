@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentHomeBinding
-import com.android.collegeapp.ui.main.BaseFragment
+import com.android.collegeapp.ui.BaseFragment
 import com.smarteist.autoimageslider.DefaultSliderView
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations

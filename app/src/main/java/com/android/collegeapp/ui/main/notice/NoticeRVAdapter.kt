@@ -5,7 +5,7 @@ import com.android.collegeapp.adapter.BaseRVAdapter
 import com.android.collegeapp.databinding.LayoutItemNoticeBinding
 import com.squareup.picasso.Picasso
 
-class NoticeAdapter : BaseRVAdapter<Notice, LayoutItemNoticeBinding>() {
+class NoticeRVAdapter : BaseRVAdapter<Notice, LayoutItemNoticeBinding>() {
     override fun layout() = R.layout.layout_item_notice
     override fun onBindViewHolder(
         holder: Companion.BaseViewHolder<LayoutItemNoticeBinding>,
@@ -19,6 +19,9 @@ class NoticeAdapter : BaseRVAdapter<Notice, LayoutItemNoticeBinding>() {
         holder.binding.apply {
             noticeTitle.text = notice.title
             noticeDateTime.text = dateTime
+            ivNoticeImage.setOnClickListener {
+                listener?.invoke(holder.itemView,notice,position,"")
+            }
         }
 
         try {

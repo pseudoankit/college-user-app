@@ -20,7 +20,7 @@ abstract class BaseRVAdapter<T : Any, VB : ViewDataBinding> :
 
     override fun getItemCount() = list.size
 
-    var listener: ((view: View, item: T, position: Int) -> Unit)? = null
+    var listener: ((view: View, item: T, position: Int,type: String) -> Unit)? = null
 
     abstract fun layout(): Int
 

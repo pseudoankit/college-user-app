@@ -1,5 +1,6 @@
 package com.android.collegeapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.android.collegeapp.ui.ebook.EbookActivity
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -43,10 +45,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.nav_ebook -> {
+                startActivity(Intent(this,EbookActivity::class.java))
+            }
             R.id.nav_developer -> {
                 Toast.makeText(this, "ank", Toast.LENGTH_SHORT).show()
             }
-
         }
         return true
     }

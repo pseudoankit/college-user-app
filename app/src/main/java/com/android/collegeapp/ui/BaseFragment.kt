@@ -1,4 +1,4 @@
-package com.android.collegeapp.ui.main
+package com.android.collegeapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

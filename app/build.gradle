@@ -78,4 +78,11 @@ dependencies {
     //auto slider and glide
     implementation 'com.github.smarteist:autoimageslider:1.2.0'
     implementation 'com.github.bumptech.glide:glide:4.10.0'
+
+    //photo view
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+    //shimmer effect
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
 }

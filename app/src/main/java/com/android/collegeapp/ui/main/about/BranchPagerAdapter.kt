@@ -8,7 +8,7 @@ import androidx.viewpager.widget.PagerAdapter
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.LayoutItemBranchBinding
 
-class BranchVPAdapter() : PagerAdapter() {
+class BranchPagerAdapter() : PagerAdapter() {
 
 
     private lateinit var binding: LayoutItemBranchBinding

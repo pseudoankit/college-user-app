@@ -4,12 +4,12 @@ import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentAboutBinding
-import com.android.collegeapp.ui.main.BaseFragment
+import com.android.collegeapp.ui.BaseFragment
 
 class AboutFragment : BaseFragment<FragmentAboutBinding>() {
 
     private lateinit var viewPager: ViewPager
-    private val mAdapter by lazy { BranchVPAdapter() }
+    private val mAdapter by lazy { BranchPagerAdapter() }
     private lateinit var list: MutableList<Branch>
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -20,4 +20,5 @@
     <dimen name="cv_elevation">5dp</dimen>
     <dimen name="civ_dimen">105dp</dimen>
     <dimen name="cv_padding">7dp</dimen>
+    <dimen name="ebook_item_icon">30dp</dimen>
 </resources>

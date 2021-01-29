@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentFacultyBinding
-import com.android.collegeapp.ui.main.BaseFragment
+import com.android.collegeapp.ui.BaseFragment
 import com.android.collegeapp.util.hide
 import com.android.collegeapp.util.show
 import com.android.collegeapp.util.toast
@@ -37,7 +37,7 @@ class FacultyFragment : BaseFragment<FragmentFacultyBinding>() {
 
     private suspend fun setRv(child: String, rv: RecyclerView, noData: View) {
         var list: MutableList<Faculty>
-        val adapter = FacultyAdapter()
+        val adapter = FacultyRVAdapter()
         val dbPath = databaseReference.child(child)
         val listener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -63,10 +63,10 @@ class FacultyFragment : BaseFragment<FragmentFacultyBinding>() {
         dbPath.addValueEventListener(listener)
     }
 
-    private fun setUpRv(rv: RecyclerView, adapter: FacultyAdapter) {
+    private fun setUpRv(rv: RecyclerView, RVAdapter: FacultyRVAdapter) {
         rv.setHasFixedSize(true)
         rv.layoutManager = LinearLayoutManager(context)
-        rv.adapter = adapter
+        rv.adapter = RVAdapter
         }
 
     override fun setFragmentView() = R.layout.fragment_faculty

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cv_margin"
+        android:elevation="@dimen/cv_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/cv_padding"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.3"
+                android:src="@drawable/ic_pdf" />
+
+            <TextView
+                android:id="@+id/tv_ebook_title"
+                style="@style/text_medium_center"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.4"
+                android:gravity="center_vertical"
+                android:text="DS" />
+
+            <ImageView
+                android:id="@+id/iv_ebook_download"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.3"
+                android:src="@drawable/ic_download" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

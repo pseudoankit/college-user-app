@@ -5,7 +5,7 @@ import com.android.collegeapp.adapter.BaseRVAdapter
 import com.android.collegeapp.databinding.LayoutItemFacultyBinding
 import com.squareup.picasso.Picasso
 
-class FacultyAdapter : BaseRVAdapter<Faculty, LayoutItemFacultyBinding>() {
+class FacultyRVAdapter : BaseRVAdapter<Faculty, LayoutItemFacultyBinding>() {
     override fun layout() = R.layout.layout_item_faculty
     override fun onBindViewHolder(
         holder: Companion.BaseViewHolder<LayoutItemFacultyBinding>,

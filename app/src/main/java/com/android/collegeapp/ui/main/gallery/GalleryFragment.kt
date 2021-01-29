@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentGalleryBinding
-import com.android.collegeapp.ui.main.BaseFragment
+import com.android.collegeapp.ui.BaseFragment
 import com.android.collegeapp.util.toast
 import com.google.firebase.database.*
 
@@ -43,7 +43,7 @@ class GalleryFragment : BaseFragment<FragmentGalleryBinding>() {
     }
 
     private fun setUpRv(rv: RecyclerView, list: MutableList<String>) {
-        val mAdapter = GalleryAdapter()
+        val mAdapter = GalleryRVAdapter()
         mAdapter.addItems(list)
         rv.apply {
             setHasFixedSize(true)

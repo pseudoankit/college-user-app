@@ -1,11 +1,14 @@
 package com.android.collegeapp.ui.main.notice
 
-import android.content.DialogInterface
+import android.app.ActivityOptions
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.collegeapp.PhotoViewActivity
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentNoticeBinding
-import com.android.collegeapp.ui.main.BaseFragment
+import com.android.collegeapp.ui.BaseFragment
 import com.android.collegeapp.util.hide
 import com.android.collegeapp.util.show
 import com.android.collegeapp.util.toast
@@ -15,7 +18,7 @@ class NoticeFragment : BaseFragment<FragmentNoticeBinding>() {
 
     private lateinit var databaseReference: DatabaseReference
     private lateinit var list: MutableList<Notice>
-    private val adapter by lazy { NoticeAdapter() }
+    private val adapter by lazy { NoticeRVAdapter() }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -57,8 +60,19 @@ class NoticeFragment : BaseFragment<FragmentNoticeBinding>() {
         binding.rvNotice.setHasFixedSize(true)
         binding.rvNotice.layoutManager = LinearLayoutManager(context)
         binding.rvNotice.adapter = adapter
+
+        adapter.listener = {_,notice,_,_ ->
+            Intent(activity,PhotoViewActivity::class.java).apply {
+                this.putExtra(NOTICE_URI,notice.image)
+                startActivity(this)
+            }
+
+        }
     }
 
     override fun setFragmentView() = R.layout.fragment_notice
 
+    companion object {
+        const val NOTICE_URI="uri_notice"
+    }
 }
