@@ -26,7 +26,7 @@
                         style="@style/text_title"
                         android:text="@string/convocation" />
 
-                    <View  style="@style/separator_black" />
+                    <View style="@style/separator_black" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_gallery_convocation"
@@ -50,7 +50,7 @@
                         style="@style/text_title"
                         android:text="@string/republic_day" />
 
-                    <View  style="@style/separator_black" />
+                    <View style="@style/separator_black" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_gallery_republic_day"

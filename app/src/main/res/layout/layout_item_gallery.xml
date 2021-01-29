@@ -5,13 +5,12 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/cv_margin"
-        app:cardBackgroundColor="@color/grey2">
+        android:layout_margin="@dimen/cv_margin">
 
         <ImageView
+            android:id="@+id/iv_gallery_image"
             android:layout_width="wrap_content"
             android:layout_height="75dp"
-            android:layout_margin="@dimen/dimen_1"
-            android:id="@+id/iv_gallery_image"/>
+            android:scaleType="fitXY" />
     </com.google.android.material.card.MaterialCardView>
 </layout>

@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="faculty"
             type="com.android.collegeapp.ui.main.faculty.Faculty" />
@@ -44,8 +45,8 @@
                 android:id="@+id/ivFacultyImage"
                 android:layout_width="@dimen/civ_dimen"
                 android:layout_height="@dimen/civ_dimen"
-                android:layout_marginEnd="-10dp"
                 android:layout_gravity="center"
+                android:layout_marginEnd="-10dp"
                 android:layout_weight="0.3" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

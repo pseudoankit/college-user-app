@@ -1,20 +1,29 @@
 package com.android.collegeapp.ui.main.about
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.viewpager.widget.ViewPager
 import com.android.collegeapp.R
+import com.android.collegeapp.databinding.FragmentAboutBinding
+import com.android.collegeapp.ui.main.BaseFragment
 
-class AboutFragment : Fragment() {
+class AboutFragment : BaseFragment<FragmentAboutBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false)
+    private lateinit var viewPager: ViewPager
+    private val mAdapter by lazy { BranchVPAdapter() }
+    private lateinit var list: MutableList<Branch>
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        list = mutableListOf()
+        list.add(Branch(R.drawable.ic_mechanical, getString(R.string.mechanical)))
+        list.add(Branch(R.drawable.ic_computer,getString(R.string.cse)))
+
+        mAdapter.addItems(list)
+        binding.viewPager.adapter = mAdapter
+
     }
+
+    override fun setFragmentView() = R.layout.fragment_about
 
 }
