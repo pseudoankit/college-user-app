@@ -41,7 +41,7 @@ class NoticeFragment : BaseFragment<FragmentNoticeBinding>() {
                     binding.noNoticeFound.hide()
                     binding.rvNotice.show()
                     snapshot.children.forEach { snap ->
-                        list.add(snap.getValue(Notice::class.java)!!)
+                        list.add(0,snap.getValue(Notice::class.java)!!)
                     }
                     setUpRv()
                 }

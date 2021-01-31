@@ -18,7 +18,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 
 
-fun Context.showImage(uri: Uri) {
+fun Context.showImageOnDialog(uri: Uri) {
     val builder = Dialog(this)
     builder.requestWindowFeature(Window.FEATURE_NO_TITLE)
     builder.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))

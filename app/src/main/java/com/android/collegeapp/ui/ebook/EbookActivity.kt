@@ -3,6 +3,7 @@ package com.android.collegeapp.ui.ebook
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import com.android.collegeapp.R
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -13,6 +14,7 @@ import com.android.collegeapp.util.show
 import com.android.collegeapp.util.toast
 import com.android.collegeapp.util.viewPdf
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_ebook.*
 
 
 class EbookActivity : AppCompatActivity() {
@@ -25,6 +27,10 @@ class EbookActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_ebook)
+
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true).also {
+            title = getString(R.string.ebooks)
+        }
 
         databaseReference = FirebaseDatabase.getInstance().reference.child("Pdf")
 
@@ -51,7 +57,6 @@ class EbookActivity : AppCompatActivity() {
     }
 
     private fun setUpRv() {
-        binding.progressBar.hide()
         binding.rvEbook.show()
         mAdapter.addItems(list)
         binding.rvEbook.apply {
@@ -59,6 +64,11 @@ class EbookActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@EbookActivity)
             adapter = mAdapter
         }
+
+        binding.progressBar.hide()
+        shimmer_layout.stopShimmer()
+        shimmer_layout.hide()
+
         mAdapter.listener = { _, ebook, _, type ->
             if (type == DOWNLOAD) {
                 Intent(Intent.ACTION_VIEW).apply {

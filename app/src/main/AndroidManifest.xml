@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeApp">
         <activity android:name=".PhotoViewActivity"/>
-        <activity android:name=".ui.ebook.EbookActivity" />
+        <activity android:name=".ui.ebook.EbookActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
