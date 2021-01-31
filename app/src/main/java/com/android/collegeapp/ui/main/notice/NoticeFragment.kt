@@ -9,6 +9,7 @@ import com.android.collegeapp.PhotoViewActivity
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentNoticeBinding
 import com.android.collegeapp.ui.BaseFragment
+import com.android.collegeapp.util.FireBaseConstants.FB_NOTICE
 import com.android.collegeapp.util.hide
 import com.android.collegeapp.util.show
 import com.android.collegeapp.util.toast
@@ -23,7 +24,7 @@ class NoticeFragment : BaseFragment<FragmentNoticeBinding>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        databaseReference = FirebaseDatabase.getInstance().reference.child("Notice")
+        databaseReference = FirebaseDatabase.getInstance().reference.child(FB_NOTICE)
 
         getNotice()
 

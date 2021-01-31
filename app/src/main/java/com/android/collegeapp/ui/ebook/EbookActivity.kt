@@ -3,12 +3,12 @@ package com.android.collegeapp.ui.ebook
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import com.android.collegeapp.R
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.collegeapp.databinding.ActivityEbookBinding
+import com.android.collegeapp.util.FireBaseConstants.FB_PDF
 import com.android.collegeapp.util.hide
 import com.android.collegeapp.util.show
 import com.android.collegeapp.util.toast
@@ -32,7 +32,7 @@ class EbookActivity : AppCompatActivity() {
             title = getString(R.string.ebooks)
         }
 
-        databaseReference = FirebaseDatabase.getInstance().reference.child("Pdf")
+        databaseReference = FirebaseDatabase.getInstance().reference.child(FB_PDF)
 
         getPdf()
 
@@ -70,12 +70,12 @@ class EbookActivity : AppCompatActivity() {
         shimmer_layout.hide()
 
         mAdapter.listener = { _, ebook, _, type ->
-            if (type == DOWNLOAD) {
+            if (type == LISTENER_DOWNLOAD) {
                 Intent(Intent.ACTION_VIEW).apply {
                     data = Uri.parse(ebook.url)
                     startActivity(this)
                 }
-            } else if (type == VIEW_PDF) {
+            } else if (type == LISTENER_VIEW_PDF) {
                 viewPdf(Uri.parse(ebook.url))
             }
         }
@@ -83,8 +83,7 @@ class EbookActivity : AppCompatActivity() {
 
     companion object {
         const val PDF_URL_Intent = "url"
-        const val DOWNLOAD = "download"
-        const val VIEW_PDF = "view"
+        const val LISTENER_DOWNLOAD = "download"
+        const val LISTENER_VIEW_PDF = "view"
     }
-
 }

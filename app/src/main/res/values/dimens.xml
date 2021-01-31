@@ -21,4 +21,9 @@
     <dimen name="civ_dimen">105dp</dimen>
     <dimen name="cv_padding">7dp</dimen>
     <dimen name="ebook_item_icon">30dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="civ_add_update_faculty">120dp</dimen>
+    <dimen name="margin_15">15dp</dimen>
+    <dimen name="text_17">17sp</dimen>
+    <dimen name="radius_corner">30dp</dimen>
 </resources>

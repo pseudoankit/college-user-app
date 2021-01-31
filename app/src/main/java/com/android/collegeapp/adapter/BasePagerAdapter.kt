@@ -7,7 +7,7 @@ import androidx.viewpager.widget.PagerAdapter
 import com.android.collegeapp.ui.main.about.Branch
 
 abstract class BasePagerAdapter<T: Any,VB: ViewBinding> : PagerAdapter() {
-
+//todo
     var list = mutableListOf<T>()
 
     fun addItems(list: MutableList<T>){

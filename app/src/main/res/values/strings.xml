@@ -30,4 +30,13 @@
     <string name="ece">Electronics</string>
     <string name="convocation">Convocation</string>
     <string name="republic_day">Republic Day</string>
+    <string name="signup">SignUp</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_register">Don\'t have an account? Register</string>
+    <string name="email">Email</string>
+    <string name="error_required">Required</string>
+    <string name="logout">Logout</string>
+    <string name="name">Name</string>
+
 </resources>

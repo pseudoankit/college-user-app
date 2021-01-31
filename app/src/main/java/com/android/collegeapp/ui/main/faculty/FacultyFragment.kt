@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentFacultyBinding
 import com.android.collegeapp.ui.BaseFragment
+import com.android.collegeapp.util.FireBaseConstants.FB_FACULTY
+import com.android.collegeapp.util.FireBaseConstants.FB_FACULTY_CSE
+import com.android.collegeapp.util.FireBaseConstants.FB_FACULTY_ECE
+import com.android.collegeapp.util.FireBaseConstants.FB_FACULTY_ME
 import com.android.collegeapp.util.hide
 import com.android.collegeapp.util.show
 import com.android.collegeapp.util.toast
@@ -21,7 +25,7 @@ class FacultyFragment : BaseFragment<FragmentFacultyBinding>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        databaseReference = FirebaseDatabase.getInstance().reference.child("Faculty")
+        databaseReference = FirebaseDatabase.getInstance().reference.child(FB_FACULTY)
 
         rv()
     }
@@ -29,9 +33,9 @@ class FacultyFragment : BaseFragment<FragmentFacultyBinding>() {
     private fun rv() {
         //todo in single rv
         lifecycleScope.launch {
-            setRv(getString(R.string.cse), binding.rvDepartmentCS, binding.CSNoData)
-            setRv(getString(R.string.ece), binding.rvDepartmentECE, binding.ECENoData)
-            setRv(getString(R.string.mechanical), binding.rvDepartmentME, binding.MENoData)
+            setRv(FB_FACULTY_CSE, binding.rvDepartmentCS, binding.CSNoData)
+            setRv(FB_FACULTY_ECE, binding.rvDepartmentECE, binding.ECENoData)
+            setRv(FB_FACULTY_ME, binding.rvDepartmentME, binding.MENoData)
         }
     }
 
