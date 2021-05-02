@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentFacultyBinding
-import com.android.collegeapp.ui.BaseFragment
+import com.android.collegeapp.base.BaseFragment
 import com.android.collegeapp.util.FireBaseConstants.FB_FACULTY
 import com.android.collegeapp.util.FireBaseConstants.FB_FACULTY_CSE
 import com.android.collegeapp.util.FireBaseConstants.FB_FACULTY_ECE

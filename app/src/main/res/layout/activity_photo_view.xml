@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".PhotoViewActivity">
+    tools:context=".ui.PhotoViewActivity">
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/photo"

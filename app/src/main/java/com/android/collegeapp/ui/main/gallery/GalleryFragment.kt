@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentGalleryBinding
-import com.android.collegeapp.ui.BaseFragment
+import com.android.collegeapp.base.BaseFragment
 import com.android.collegeapp.util.FireBaseConstants.FB_GALLERY
 import com.android.collegeapp.util.FireBaseConstants.FB_GALLERY_CONVOCATION
 import com.android.collegeapp.util.FireBaseConstants.FB_GALLERY_REPUBLIC_DAY

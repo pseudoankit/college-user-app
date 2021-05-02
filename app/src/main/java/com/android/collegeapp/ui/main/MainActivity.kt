@@ -1,4 +1,4 @@
-package com.android.collegeapp
+package com.android.collegeapp.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.android.collegeapp.R
 import com.android.collegeapp.ui.auth.LoginActivity
 import com.android.collegeapp.ui.ebook.EbookActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -30,7 +32,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val navController = Navigation.findNavController(this, R.id.fragment_container)
         NavigationUI.setupWithNavController(bottom_nav, navController)
-        /*setup bottom navigation
+        /*
+        *setup bottom navigation
         *
         * setup navigation drawer
          */

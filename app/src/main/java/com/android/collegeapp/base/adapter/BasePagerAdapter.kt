@@ -1,10 +1,9 @@
-package com.android.collegeapp.adapter
+package com.android.collegeapp.base.adapter
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import androidx.viewpager.widget.PagerAdapter
-import com.android.collegeapp.ui.main.about.Branch
 
 abstract class BasePagerAdapter<T: Any,VB: ViewBinding> : PagerAdapter() {
 //todo

@@ -1,7 +1,7 @@
 package com.android.collegeapp.ui.main.faculty
 
 import com.android.collegeapp.R
-import com.android.collegeapp.adapter.BaseRVAdapter
+import com.android.collegeapp.base.adapter.BaseRVAdapter
 import com.android.collegeapp.databinding.LayoutItemFacultyBinding
 import com.squareup.picasso.Picasso
 

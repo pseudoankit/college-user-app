@@ -1,4 +1,4 @@
-package com.android.collegeapp.adapter
+package com.android.collegeapp.base.adapter
 
 import android.view.LayoutInflater
 import android.view.View

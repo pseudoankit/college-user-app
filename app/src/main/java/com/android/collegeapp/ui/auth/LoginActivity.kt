@@ -6,7 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.android.collegeapp.MainActivity
+import com.android.collegeapp.ui.main.MainActivity
 import com.android.collegeapp.R
 import com.android.collegeapp.util.toast
 import com.google.firebase.auth.FirebaseAuth

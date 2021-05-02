@@ -3,7 +3,7 @@ package com.android.collegeapp.ui.auth
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.android.collegeapp.MainActivity
+import com.android.collegeapp.ui.main.MainActivity
 import com.android.collegeapp.R
 import com.android.collegeapp.ui.auth.AuthConstants.FB_USER
 import com.android.collegeapp.ui.auth.AuthConstants.FB_USER_EMAIL

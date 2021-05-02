@@ -1,7 +1,7 @@
 package com.android.collegeapp.ui.ebook
 
 import com.android.collegeapp.R
-import com.android.collegeapp.adapter.BaseRVAdapter
+import com.android.collegeapp.base.adapter.BaseRVAdapter
 import com.android.collegeapp.databinding.LayoutItemEbookBinding
 import com.android.collegeapp.ui.ebook.EbookActivity.Companion.LISTENER_DOWNLOAD
 import com.android.collegeapp.ui.ebook.EbookActivity.Companion.LISTENER_VIEW_PDF

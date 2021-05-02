@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentAboutBinding
-import com.android.collegeapp.ui.BaseFragment
+import com.android.collegeapp.base.BaseFragment
 
 class AboutFragment : BaseFragment<FragmentAboutBinding>() {
 

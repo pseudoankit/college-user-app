@@ -1,14 +1,12 @@
 package com.android.collegeapp.ui.main.notice
 
-import android.app.ActivityOptions
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.collegeapp.PhotoViewActivity
+import com.android.collegeapp.ui.PhotoViewActivity
 import com.android.collegeapp.R
 import com.android.collegeapp.databinding.FragmentNoticeBinding
-import com.android.collegeapp.ui.BaseFragment
+import com.android.collegeapp.base.BaseFragment
 import com.android.collegeapp.util.FireBaseConstants.FB_NOTICE
 import com.android.collegeapp.util.hide
 import com.android.collegeapp.util.show
@@ -63,7 +61,7 @@ class NoticeFragment : BaseFragment<FragmentNoticeBinding>() {
         binding.rvNotice.adapter = adapter
 
         adapter.listener = {_,notice,_,_ ->
-            Intent(activity,PhotoViewActivity::class.java).apply {
+            Intent(activity, PhotoViewActivity::class.java).apply {
                 this.putExtra(NOTICE_URI,notice.image)
                 startActivity(this)
             }

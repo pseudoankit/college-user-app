@@ -14,6 +14,7 @@ import com.android.collegeapp.util.show
 import com.android.collegeapp.util.toast
 import com.android.collegeapp.util.viewPdf
 import com.google.firebase.database.*
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_ebook.*
 
 
